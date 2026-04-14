@@ -1,0 +1,51 @@
+.no-print {
+  display: initial;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+
+  html,
+  body {
+    width: auto;
+    min-height: 0;
+    height: auto;
+    overflow: visible;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    margin: 0 !important;
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .MuiAppBar-root,
+  .MuiButton-root,
+  .MuiIconButton-root {
+    box-shadow: none !important;
+  }
+
+  .MuiCard-root,
+  .MuiPaper-root {
+    break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  .MuiContainer-root {
+    max-width: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .MuiBox-root {
+    min-height: auto !important;
+  }
+}
